@@ -81,15 +81,15 @@ for (let i = 1; i <= 5; i++){
 
     console.log("====================================================================================================");
 
+    //                  If Player Press Cancel Then Alert Cancelled.
+    if (playerChoice == null){
+        console.log("Player Cancelled");
+        alert("Cancelled");
+    }
+
     //                  If Player Answered Correctly Run The Game.
     if (lower(playerChoice) == "rock" || lower(playerChoice) == "paper" || lower(playerChoice) == "scissor"){
         rockPaperScissors(lower(playerChoice), getComputerChoice());
-    }
-
-    //                  If Player Press Cancel Then Alert Cancelled.
-    else if (playerChoice == null){
-        console.log("Player Cancelled");
-        alert("Cancelled");
     }
 
     //                  If Player Press OK Without Typing Anything Then Alert Player Didn't Typed.
