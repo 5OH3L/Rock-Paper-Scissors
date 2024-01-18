@@ -71,6 +71,7 @@ function rockPaperScissors(playerSelection, computerSelection){
     }
 }
 
+//                  Function To Show Final Score.
 function showFinalScore(){
     return `|=================================|
 |  Player  :    Tie    : Computer |\n|----------+-----------+----------|\n|     ${playerScore}    :     ${tieScore}     :     ${computerScore}    |
