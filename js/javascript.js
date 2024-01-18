@@ -34,7 +34,7 @@ function rockPaperScissors(playerSelection, computerSelection){
 
         //                  If The Answer Is Same Say Both Answers & Say Tie.
         console.log("                        Tie !");
-        console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+        console.log(`Player   : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
         return "tie";
     }
 
@@ -44,28 +44,28 @@ function rockPaperScissors(playerSelection, computerSelection){
         //                  If Player Choose Scissor & Computer Choose Paper Then Say Player Wins.
         if (playerSelection == "scissor" && computerSelection == "paper"){
             console.log("                    Player Wins !");
-            console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+            console.log(`Player   : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
 
         //                  If Player Choose Paper & Computer Choose Rock Then Say Player Wins.
         else if ( playerSelection == "paper" && computerSelection == "rock"){
             console.log("                    Player Wins !");
-            console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+            console.log(`Player   : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
 
         //                  If Player Choose Rock & Computer Choose Scissor Then Say Player Wins.
         else if (playerSelection == "rock" && computerSelection == "scissor"){
             console.log("                    Player Wins !");
-            console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+            console.log(`Player   : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
 
         //                  If None Of Them Met The Conditions Then Say Computer Wins.
         else{
             console.log("                   Computer Wins !");
-            console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+            console.log(`Player   : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "computerWins";
         }
     }
@@ -90,7 +90,7 @@ for (let i = 1; i <= 5; i++){
     //                  Show The Round In Console.
     console.log(`                      Round : ${i}`);
 
-    console.log("====================================================================================================");
+    console.log("=======================================================");
 
     //                  If Player Press Cancel Then Alert Cancelled.
     if (playerChoice == null){
@@ -124,7 +124,7 @@ for (let i = 1; i <= 5; i++){
         console.log("Incorrect Word");
         alert("Incorrect Word");
     }
-    console.log("----------------------------------------------------------------------------------------------------");
+    console.log("-------------------------------------------------------");
 }
 
 //                  Shows Each Player's Score ( Player & Computer )
