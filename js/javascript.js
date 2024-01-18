@@ -33,8 +33,9 @@ function rockPaperScissors(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
 
         //                  If The Answer Is Same Say Both Answers & Say Tie.
-        console.log("                   Tie !");
+        console.log("                        Tie !");
         console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
+        return "tie";
     }
 
     //                  If The Answer Is Not Same Run The Else Block Below
@@ -42,21 +43,21 @@ function rockPaperScissors(playerSelection, computerSelection){
 
         //                  If Player Choose Scissor & Computer Choose Paper Then Say Player Wins.
         if (playerSelection == "scissor" && computerSelection == "paper"){
-            console.log("                   Player Wins !");
+            console.log("                    Player Wins !");
             console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
 
         //                  If Player Choose Paper & Computer Choose Rock Then Say Player Wins.
         else if ( playerSelection == "paper" && computerSelection == "rock"){
-            console.log("                   Player Wins !");
+            console.log("                    Player Wins !");
             console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
 
         //                  If Player Choose Rock & Computer Choose Scissor Then Say Player Wins.
         else if (playerSelection == "rock" && computerSelection == "scissor"){
-            console.log("                   Player Wins !");
+            console.log("                    Player Wins !");
             console.log(`Player : ${cap(playerSelection)}\nComputer : ${cap(computerSelection)}`);
             return "playerWins";
         }
@@ -70,6 +71,13 @@ function rockPaperScissors(playerSelection, computerSelection){
     }
 }
 
+let playerScore = 0; // Collect How Many Times Player Won.
+let computerScore = 0; // Collect How Many Times Computer Won.
+let tieScore = 0; // Collect How Many Times The Game Was Tie.
+let finalScore = `|=================================|
+|  Player  :    Tie    : Computer |\n|----------+-----------+----------|\n|     ${playerScore}    :     ${tieScore}     :     ${computerScore}    |
+|=================================|`;
+
 //                  For Loop To Play The Game 5 Times
 for (let i = 1; i <= 5; i++){
 
@@ -77,7 +85,7 @@ for (let i = 1; i <= 5; i++){
     let playerChoice = prompt(`\t Round : ${i}\nChoose Rock || Paper || Scissor`);
 
     //                  Show The Round In Console.
-    console.log(`Round : ${i}`);
+    console.log(`                      Round : ${i}`);
 
     console.log("====================================================================================================");
 
@@ -85,16 +93,26 @@ for (let i = 1; i <= 5; i++){
     if (playerChoice == null){
         console.log("Player Cancelled");
         alert("Cancelled");
+        console.log(finalScore);
     }
 
     //                  If Player Answered Correctly Run The Game.
     if (lower(playerChoice) == "rock" || lower(playerChoice) == "paper" || lower(playerChoice) == "scissor"){
-        rockPaperScissors(lower(playerChoice), getComputerChoice());
+        let winner = rockPaperScissors(lower(playerChoice), getComputerChoice());
+        if (winner === "playerWins"){
+            playerScore++;
+        }
+        if (winner === "computerWins"){
+            computerScore++
+        }
+        if (winner === "tie") {
+            tieScore++
+        }
     }
 
     //                  If Player Press OK Without Typing Anything Then Alert Player Didn't Typed.
     else if (playerChoice == ""){
-        console.log("Player Didn't Typed");
+        console.log("Player Didn't Type");
         alert("You Didn't Type");
     }
 
@@ -105,3 +123,6 @@ for (let i = 1; i <= 5; i++){
     }
     console.log("----------------------------------------------------------------------------------------------------");
 }
+
+//                  Shows Each Player's Score ( Player & Computer )
+console.log(finalScore);
