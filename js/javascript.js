@@ -71,12 +71,15 @@ function rockPaperScissors(playerSelection, computerSelection){
     }
 }
 
+function showFinalScore(){
+    return `|=================================|
+|  Player  :    Tie    : Computer |\n|----------+-----------+----------|\n|     ${playerScore}    :     ${tieScore}     :     ${computerScore}    |
+|=================================|`;
+}
+
 let playerScore = 0; // Collect How Many Times Player Won.
 let computerScore = 0; // Collect How Many Times Computer Won.
 let tieScore = 0; // Collect How Many Times The Game Was Tie.
-let finalScore = `|=================================|
-|  Player  :    Tie    : Computer |\n|----------+-----------+----------|\n|     ${playerScore}    :     ${tieScore}     :     ${computerScore}    |
-|=================================|`;
 
 //                  For Loop To Play The Game 5 Times
 for (let i = 1; i <= 5; i++){
@@ -93,7 +96,7 @@ for (let i = 1; i <= 5; i++){
     if (playerChoice == null){
         console.log("Player Cancelled");
         alert("Cancelled");
-        console.log(finalScore);
+        console.log(showFinalScore());
     }
 
     //                  If Player Answered Correctly Run The Game.
@@ -125,4 +128,4 @@ for (let i = 1; i <= 5; i++){
 }
 
 //                  Shows Each Player's Score ( Player & Computer )
-console.log(finalScore);
+console.log(showFinalScore());
