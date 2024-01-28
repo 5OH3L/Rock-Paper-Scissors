@@ -85,6 +85,17 @@ let computerScore = 0; // Collect How Many Times Computer Won.
 let tieScore = 0; // Collect How Many Times The Game Was Tie.
 let whoWins;
 
+//                  Who Wins
+if (playerScore == computerScore){
+    whoWins = " It's a tie  ";
+}
+else if (playerScore > computerScore){
+    whoWins = " Player Wins ";
+}
+else {
+    whoWins = "Computer Wins";
+}
+
 //                  For Loop To Play The Game 5 Times
 for (let i = 1; i <= 5; i++){
 
@@ -129,17 +140,6 @@ for (let i = 1; i <= 5; i++){
         alert("Incorrect Word");
     }
     console.log("-------------------------------------------------------");
-}
-
-//                  Who Wins
-if (playerScore == computerScore){
-    whoWins = " It's a tie  ";
-}
-else if (playerScore > computerScore){
-    whoWins = " Player Wins ";
-}
-else {
-    whoWins = "Computer Wins";
 }
 
 //                  Shows Each Player's Score ( Player & Computer )
