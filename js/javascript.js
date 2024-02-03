@@ -96,54 +96,79 @@ else {
     whoWins = "Computer Wins";
 }
 
-//                  For Loop To Play The Game 5 Times
-for (let i = 1; i <= 5; i++){
+let btn1 = document.getElementById('button1');
+let btn2 = document.getElementById('button2');
+let btn3 = document.getElementById('button3');
+let score = document.getElementById('score');
+let selection = document.getElementById('selection');
+let winner = document.getElementById('winnerName');
+let reset = document.getElementById('reset');
+let cChoice = document.getElementById('cChoice');
+let pChoice = document.getElementById('pChoice');
+let result = document.getElementById('result');
 
-    //                  Get Player's Input.
-    let playerChoice = prompt(`\t Round : ${i}\nChoose Rock || Paper || Scissor`);
+let scorePS = document.createElement('h1');
+let scoreT = document.createElement('h1');
+let scoreCS = document.createElement('h1');
 
-    //                  Show The Round In Console.
-    console.log(`                      Round : ${i}`);
+scorePS.innerHTML = `Player &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${playerScore}`;
+scoreT.innerHTML = `Tie &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${tieScore}`;
+scoreCS.innerHTML = `Computer : ${computerScore}`;
+score.appendChild(scorePS);
+score.appendChild(scoreT);
+score.appendChild(scoreCS);
 
-    console.log("=======================================================");
-
-    //                  If Player Press Cancel Then Alert Cancelled.
-    if (playerChoice == null){
-        console.log("Player Cancelled");
-        alert("Cancelled");
-        console.log(showFinalScore());
+function game(e){
+    let computerChoice = getComputerChoice();
+    let final = rockPaperScissors(e.target.getAttribute('answer'), computerChoice);
+    if(final == "computerWins"){
+        result.textContent = "Computer Won!";
+        result.style.color = "red";
+        computerScore += 1;
+        scoreCS.innerHTML = `Computer : ${computerScore}`;
+    } else if (final == "playerWins"){
+        result.textContent = "Player Won!";
+        result.style.color = "lightgreen";
+        playerScore += 1;
+        scorePS.innerHTML = `Player &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${playerScore}`;
+    }else{
+        result.style.color = "yellow";
+        result.textContent = "It's A Tie!";
+        tieScore += 1;
+        scoreT.innerHTML = `Tie &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${tieScore}`;
     }
 
-    //                  If Player Answered Correctly Run The Game.
-    if (lower(playerChoice) == "rock" || lower(playerChoice) == "paper" || lower(playerChoice) == "scissor"){
-        let winner = rockPaperScissors(lower(playerChoice), getComputerChoice());
-        if (winner === "playerWins"){
-            playerScore++;
-        }
-        if (winner === "computerWins"){
-            computerScore++
-        }
-        if (winner === "tie") {
-            tieScore++
-        }
+    if(computerScore === playerScore){
+        winner.textContent = "Tie!";
+        winnerName.style.color = "yellow";
+    }else if(computerScore > playerScore){
+        winner.textContent = "Computer!";
+        winner.style.color = "red";
+    }else if(playerScore > computerScore){
+        winner.textContent = "Player!";
+        winner.style.color = "lime";
     }
 
-    //                  If Player Press OK Without Typing Anything Then Alert Player Didn't Typed.
-    else if (playerChoice == ""){
-        console.log("Player Didn't Type");
-        alert("You Didn't Type");
+    pChoice.innerHTML = `Player : ${cap(e.target.getAttribute('answer'))}`;
+    cChoice.innerHTML = `Computer : ${cap(computerChoice)}`;
+};
+
+btn1.addEventListener('click', game);
+btn2.addEventListener('click', game);
+btn3.addEventListener('click', game);
+
+reset.addEventListener('click', () =>{
+    if(confirm("Are You Sure ?")){
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+        whoWins = "N/A";
+        scoreCS.innerHTML = `Computer : ${computerScore}`;
+        scorePS.innerHTML = `Player &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${playerScore}`;
+        scoreT.innerHTML = `Tie &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ${tieScore}`;
+        result.innerHTML = "N/A"; result.style.color = "black";
+        winner.innerHTML = "N/A"; winner.style.color = "black";
+        pChoice.innerHTML = `Player : N/A`;
+        cChoice.innerHTML = `Computer : N/A`;
     }
-
-    //                  If Player's Answer Was Something Else Then Alert Incorrect Word.
-    else{
-        console.log("Incorrect Word");
-        alert("Incorrect Word");
-    }
-    console.log("-------------------------------------------------------");
-}
-
-//                  Shows Each Player's Score ( Player & Computer )
-console.log(showFinalScore());
-
-//                  Alerts Who Won
-alert(whoWins.toUpperCase());
+});

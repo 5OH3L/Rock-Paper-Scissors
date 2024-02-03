@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 
+        Background image credit : in.cdgdbentre
+        Link : https://i.pinimg.com/originals/ab/3c/a3/ab3ca36123df6ae3934e07ca85699836.gif
+     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!-- Code Is Written By Sohel (Github : 5OH3L) -->
+    <div id="buttons">
+        <h1 id="button1" class="button" answer="rock">&nbsp&nbsp&nbspRock&nbsp&nbsp&nbsp</h1>
+        <h1 id="button2" class="button" answer="paper">&nbsp&nbspPaper&nbsp&nbsp</h1>
+        <h1 id="button3" class="button" answer="scissor">&nbspScissors&nbsp</h1>
+    </div>
+    <span id="choiceContainerSpan">
+        <span id="choiceContainer">
+            <h1 id="resultTitle">Result</h1>
+            <h1 id="result">N/A</h1>
+            <h1 id="pChoice">Player : N/A</h1>
+            <h1 id="cChoice">Computer : N/A</h1>
+        </span>
+    </span>
+    <span id="scoreContainerSpan">
+        <div id="scoreContainer">
+            <h1 id="title">Scoreboard</h1>
+            <h1 id="winner">Winner:<h1 id="winnerName">N/A</h1></h1>
+            <div id="score"></div>
+            <h1 id="reset">Reset</h1>
+        </div>
+    </span>
     <script src="./js/javascript.js"></script>
 </body>
 </html>
