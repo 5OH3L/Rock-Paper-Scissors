@@ -9,6 +9,7 @@
 }
 *, *::before, *::after{
     box-sizing: border-box;
+    user-select: none;
 }
 
 html{
@@ -24,7 +25,7 @@ html{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 150px;
+    height: 100px;
 }
 
 .button{
@@ -57,9 +58,9 @@ html{
     color: black;
     display: inline-block;
     flex-direction: column;
-    padding: 40px 50px;
+    /* padding: 40px 50px; */
     width: 400px;
-    height: 400px;
+    height: 350px;
     margin-top: 10px;
     border: 2px solid white;
     border-radius: 10px;
@@ -96,7 +97,7 @@ html{
 }
 
 #reset{
-    margin: 20px 0 0 90px;
+    margin: 10px 0 0 150px;
     padding: 10px;
     text-align: center;
     background-color: red;
@@ -125,4 +126,13 @@ html{
 
 #pChoice,#cChoice,#score h1{
     color: lightgray;
+}
+
+.button{
+    padding: 5px 30px;
+}
+
+#button2,#button1{
+    position: relative;
+    left: 45px;
 }

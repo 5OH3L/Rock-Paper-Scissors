@@ -172,3 +172,5 @@ reset.addEventListener('click', () =>{
         cChoice.innerHTML = `Computer : N/A`;
     }
 });
+
+window.addEventListener('beforeunload', (event) => event.preventDefault());
