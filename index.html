@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 
-        Background image credit : in.cdgdbentre
-        Link : https://i.pinimg.com/originals/ab/3c/a3/ab3ca36123df6ae3934e07ca85699836.gif
-     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./icon/rockPaperScissorsFavicon.png">
+    <!-- Credits:
+        Background Gif : Tenor - https://tenor.com/ipY7oKXzzXs.gif
+        Website Icon : Flaticon - https://www.flaticon.com/free-icon/scissors_4420367?term=rock+paper+scissors&page=5&position=81&origin=search&related_id=4420367
+    -->
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Code Is Written By Sohel (Github : 5OH3L) -->
-    <div id="buttons">
-        <h1 id="button1" class="button" answer="rock">Rock</h1>
-        <h1 id="button2" class="button" answer="paper">Paper</h1>
-        <h1 id="button3" class="button" answer="scissor">Scissors</h1>
-    </div>
-    <span id="choiceContainerSpan">
-        <span id="choiceContainer">
-            <h1 id="resultTitle">Result</h1>
-            <h1 id="result">N/A</h1>
-            <h1 id="pChoice">Player : N/A</h1>
-            <h1 id="cChoice">Computer : N/A</h1>
-        </span>
-    </span>
-    <span id="scoreContainerSpan">
-        <div id="scoreContainer">
-            <h1 id="title">Scoreboard</h1>
-            <h1 id="winner">Winner:<h1 id="winnerName">N/A</h1></h1>
-            <div id="score"></div>
-            <h1 id="reset">Reset</h1>
+    <div id="container">
+        <div class="title">
+            <h1>Rock - Paper - Scissors By </h1><h1 id="creator"><a href="https://github.com/5OH3L" target="_blank" rel="noopener noreferrer">5OH3L</a></h1>
         </div>
-    </span>
-    <script src="./js/javascript.js"></script>
+        <div class="choices">
+            <h1 onclick="playGame(0)">ROCK</h1>
+            <h1 onclick="playGame(1)">PAPER</h1>
+            <h1 onclick="playGame(2)">SCISSORS</h1>
+        </div>
+        <div class="display">
+            <div class="playerName">
+                <h1 class="playerName1">PLAYER</h1>
+                <h1 class="playerName2">COMPUTER</h1>
+            </div>
+            <div class="playerChoice">
+                <h2 id="playerChoiceDisplay">N/A</h2>
+                <h2 id="computerChoiceDisplay">N/A</h2>
+            </div>
+            <div class="result">
+                <h1 id="resultDisplay">Start The Game</h1>
+            </div>
+            <div class="score">
+                <div class="playerScore">
+                    <h2 class="playerScoreDisplayName">Player : </h2><h2 id="playerScoreDisplay">N/A</h2>
+                </div>
+                <div class="tieScore">
+                    <h2 class="tieDisplayName">Tie :</h2><h2 id="tieDisplay">N/A</h2>
+                </div>
+                <div class="computerScore">
+                    <h2 class="computerScoreDisplayName">Computer : </h2><h2 id="computerScoreDisplay">N/A</h2>
+                </div>
+            </div>
+            <h1 id="reset" onclick="resetGame()">RESET</h1>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

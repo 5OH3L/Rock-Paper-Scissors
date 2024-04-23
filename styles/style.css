@@ -1,0 +1,129 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html,body{
+    background-image: url(../gif/backgroundGif.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#container{
+    height: 100vh;
+    width: 100vw;
+    padding-top: 2rem;
+    backdrop-filter: blur(.5rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+#creator a{
+    text-decoration: none;
+    color: white;
+    transition: .5s ease;
+}
+#creator a:hover{
+    background-color: blueviolet;
+    color: black;
+    padding: .3rem .5rem;
+    border-radius: .5rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.choices h1{
+    border: 2px solid white;
+    border-radius: .5rem;
+    width: 20vw;
+    cursor: pointer;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, .5);
+}
+.choices h1:hover{
+    transform: scale(.95);
+}
+.choices h1:active{
+    transition: .1s ease;
+    transform: scale(.9);
+    color:black;
+    background-color: lightgray;
+}
+.display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    border: .2rem solid black;
+    border-radius: 1rem;
+}
+.playerName,.playerChoice,.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.display h1, .display h2{
+    margin: 1rem 0;
+    width: 40vw;
+}
+.result h1{
+    width: 60vw;
+    color: skyblue;
+}
+.score div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    gap: 1rem;
+    color: lightslategray;
+}
+.playerScoreDisplayName,.tieDisplayName,.computerScoreDisplayName{
+    text-align: end;
+}
+.playerName h1{
+    border: .2rem solid white;
+    width: 30vw;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+.playerChoice h2{
+    width: 30vw;
+}
+.playerName1{
+    background-color: green;
+}
+.playerName2{
+    background-color: red;
+}
+#reset{
+    background-color: red;
+    width: 10vw;
+    padding: 0 1rem;
+    border-radius: .5rem;
+    border: .1rem solid white;
+    transition: .5s ease;
+}
+#reset:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 2px red;
+    cursor: pointer;
+}
